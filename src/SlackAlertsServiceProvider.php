@@ -2,8 +2,8 @@
 
 namespace Airon\SlackAlerts;
 
-use Airon\LaravelPackageTools\Package;
-use Airon\LaravelPackageTools\PackageServiceProvider;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class SlackAlertsServiceProvider extends PackageServiceProvider
 {

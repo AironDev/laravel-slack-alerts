@@ -22,7 +22,7 @@ class SendToSlackChannelJob implements ShouldQueue
     public int $maxExceptions = 3;
 
     public function __construct(
-        public   $payload,
+        public   $text,
         public string $type,
         public string $webhookUrl
     ) {

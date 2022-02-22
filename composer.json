@@ -39,13 +39,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\SlackAlerts\\": "src",
-            "Spatie\\SlackAlerts\\Database\\Factories\\": "database/factories"
+            "Airon\\SlackAlerts\\": "src",
+            "Airon\\SlackAlerts\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\SlackAlerts\\Tests\\": "tests"
+            "Airon\\SlackAlerts\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -63,7 +63,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\SlackAlerts\\SlackAlertsServiceProvider"
+                "Airon\\SlackAlerts\\SlackAlertsServiceProvider"
             ],
             "aliases": {
                 "Slack": "SlackAlert"

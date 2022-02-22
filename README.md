@@ -18,9 +18,7 @@ Under the hood, a job is used to communicate with Slack. This prevents your app 
 
 Want to send alerts to Discord instead? Check out [laravel-discord-alerts](https://github.com/spatie/laravel-discord-alerts).
 
-## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-slack-alerts.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-slack-alerts)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
@@ -67,6 +65,9 @@ return [
 
 To send a message to Slack, simply call `SlackAlert::message()` and pass it any message you want.
 
+![image](https://user-images.githubusercontent.com/29748407/155216562-eea89aeb-9cdb-4e81-82bb-ba2c1492f266.png)
+
+
 ```php
 SlackAlert::message("You have a new subscriber to the {$newsletter->name} newsletter!");
 ```
@@ -85,6 +86,9 @@ You can also use an alternative webhook, by specify extra ones in the config fil
 ```
 
 The webhook to be used can be chosen using the `to` function.
+
+![image](https://user-images.githubusercontent.com/29748407/155216607-64e87b9e-aea7-40c0-91ef-97d21eedc8ea.png)
+
 
 ```php
 use Spatie\SlackAlerts\Facades\SlackAlert;

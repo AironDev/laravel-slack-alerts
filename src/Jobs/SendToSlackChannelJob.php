@@ -22,16 +22,15 @@ class SendToSlackChannelJob implements ShouldQueue
     public int $maxExceptions = 3;
 
     public function __construct(
-        public string $text,
         public string $type,
-        public string $webhookUrl
+        public string $webhookUrl,
+        public array $payload
     ) {
     }
 
     public function handle(): void
     {
-        $payload = ['type' => $this->type, 'text' => $this->text];
 
-        Http::post($this->webhookUrl, $payload);
+        Http::post($this->webhookUrl, $this->payload);
     }
 }

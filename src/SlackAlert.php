@@ -13,7 +13,7 @@ class SlackAlert
         return $this;
     }
 
-    public function message(string $text): void
+    public function message(array $payload): void
     {
         $webhookUrl = Config::getWebhookUrl($this->webhookUrlName);
 
@@ -22,7 +22,7 @@ class SlackAlert
         }
 
         $jobArguments = [
-            'text' => $text,
+            'payload' => $payload,
             'type' => 'mrkdown',
             'webhookUrl' => $webhookUrl,
         ];

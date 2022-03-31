@@ -1,5 +1,5 @@
 {
-    "name": "spatie/laravel-slack-alerts",
+    "name": "airondev/laravel-slack-alerts",
     "description": "Send a message to Slack",
     "keywords": [
         "spatie",

@@ -1,6 +1,6 @@
 <?php
 
-namespace Airon\SlackAlerts;
+namespace Spatie\SlackAlerts;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;

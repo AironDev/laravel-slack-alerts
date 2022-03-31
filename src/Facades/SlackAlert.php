@@ -1,6 +1,6 @@
 <?php
 
-namespace Airon\SlackAlerts\Facades;
+namespace Spatie\SlackAlerts\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static self to(string $text)
  * @method static void message(string $text)
  *
- * @see \Airon\SlackAlerts\SlackAlert
+ * @see \Spatie\SlackAlerts\SlackAlert
  */
 class SlackAlert extends Facade
 {

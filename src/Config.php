@@ -1,11 +1,10 @@
 <?php
 
-namespace Airon\SlackAlerts;
+namespace Spatie\SlackAlerts;
 
-use Airon\SlackAlerts\Exceptions\JobClassDoesNotExist;
-use Airon\SlackAlerts\Exceptions\WebhookDoesNotExist;
-use Airon\SlackAlerts\Exceptions\WebhookUrlNotValid;
-use Airon\SlackAlerts\Jobs\SendToSlackChannelJob;
+use Spatie\SlackAlerts\Exceptions\JobClassDoesNotExist;
+use Spatie\SlackAlerts\Exceptions\WebhookUrlNotValid;
+use Spatie\SlackAlerts\Jobs\SendToSlackChannelJob;
 
 class Config
 {
@@ -20,12 +19,16 @@ class Config
         return app($jobClass, $arguments);
     }
 
-    public static function getWebhookUrl(string $name): string
+    public static function getWebhookUrl(string $name): string|null
     {
+        if (filter_var($name, FILTER_VALIDATE_URL)) {
+            return $name;
+        }
+
         $url = config("slack-alerts.webhook_urls.{$name}");
 
         if (is_null($url)) {
-            throw WebhookDoesNotExist::make($name);
+            return null;
         }
 
         if (filter_var($url, FILTER_VALIDATE_URL) === false) {

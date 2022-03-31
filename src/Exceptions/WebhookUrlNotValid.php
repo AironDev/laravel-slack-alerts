@@ -1,6 +1,6 @@
 <?php
 
-namespace Airon\SlackAlerts\Exceptions;
+namespace Spatie\SlackAlerts\Exceptions;
 
 use RuntimeException;
 

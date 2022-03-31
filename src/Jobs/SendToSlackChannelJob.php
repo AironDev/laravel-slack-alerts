@@ -1,6 +1,6 @@
 <?php
 
-namespace Airon\SlackAlerts\Jobs;
+namespace Spatie\SlackAlerts\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -22,7 +22,7 @@ class SendToSlackChannelJob implements ShouldQueue
     public int $maxExceptions = 3;
 
     public function __construct(
-        public   $text,
+        public string $text,
         public string $type,
         public string $webhookUrl
     ) {

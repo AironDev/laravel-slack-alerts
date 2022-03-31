@@ -1,6 +1,6 @@
 {
-    "name": "airondev/laravel-slack-alerts",
-    "description": "Send a message to Slack, forked from spatie/laravel-slack-alerts",
+    "name": "spatie/laravel-slack-alerts",
+    "description": "Send a message to Slack",
     "keywords": [
         "spatie",
         "laravel",
@@ -10,8 +10,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Airon Dev",
-            "email": "airondev@gmail.com",
+            "name": "Niels Vanpachtenbeke",
+            "email": "niels@spatie.be",
             "role": "Developer"
         },
         {
@@ -21,13 +21,13 @@
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^7.3|^8.0",
         "spatie/laravel-package-tools": "^1.9.2",
         "illuminate/contracts": "^8.73|^9.0"
     },
     "require-dev": {
         "nunomaduro/collision": "^5.10|^6.0",
-        "nunomaduro/larastan": "^1.0",
+        "nunomaduro/larastan": "^1.0|2.0",
         "orchestra/testbench": "^6.22",
         "pestphp/pest": "^1.21",
         "pestphp/pest-plugin-laravel": "^1.1",
@@ -39,13 +39,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Airon\\SlackAlerts\\": "src",
-            "Airon\\SlackAlerts\\Database\\Factories\\": "database/factories"
+            "Spatie\\SlackAlerts\\": "src",
+            "Spatie\\SlackAlerts\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Airon\\SlackAlerts\\Tests\\": "tests"
+            "Spatie\\SlackAlerts\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -63,7 +63,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Airon\\SlackAlerts\\SlackAlertsServiceProvider"
+                "Spatie\\SlackAlerts\\SlackAlertsServiceProvider"
             ],
             "aliases": {
                 "Slack": "SlackAlert"

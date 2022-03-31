@@ -1,6 +1,6 @@
 <?php
 
-namespace Airon\SlackAlerts;
+namespace Spatie\SlackAlerts;
 
 class SlackAlert
 {
@@ -13,13 +13,16 @@ class SlackAlert
         return $this;
     }
 
-    public function message(array $payload): void
+    public function message(string $text): void
     {
         $webhookUrl = Config::getWebhookUrl($this->webhookUrlName);
 
+        if (! $webhookUrl) {
+            return;
+        }
 
         $jobArguments = [
-            'text' => $payload,
+            'text' => $text,
             'type' => 'mrkdown',
             'webhookUrl' => $webhookUrl,
         ];

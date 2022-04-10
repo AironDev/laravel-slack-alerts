@@ -19,7 +19,7 @@ class Config
         return app($jobClass, $arguments);
     }
 
-    public static function getWebhookUrl(string $name): string|null
+    public static function getWebhookUrl(string $name)
     {
         if (filter_var($name, FILTER_VALIDATE_URL)) {
             return $name;

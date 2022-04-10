@@ -16,16 +16,21 @@ class SendToSlackChannelJob implements ShouldQueue
     use Queueable;
     use SerializesModels;
 
+
+    public string $type;
+    public string $webhookUrl;
+    public array $payload;
+
+
     /**
      * The maximum number of unhandled exceptions to allow before failing.
      */
     public int $maxExceptions = 3;
 
-    public function __construct(
-        public string $type,
-        public string $webhookUrl,
-        public array $payload
-    ) {
+    public function __construct($type, $webhookUrl, $payload) {
+        $this->type = $type;
+        $this->webhookUrl = $webhookUrl;
+        $this->payload = $payload;
     }
 
     public function handle(): void

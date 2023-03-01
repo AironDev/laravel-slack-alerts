@@ -1,3 +1,6 @@
+
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
+
 # Quickly send a message to Slack
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-slack-alerts.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-slack-alerts)
@@ -18,7 +21,9 @@ Under the hood, a job is used to communicate with Slack. This prevents your app 
 
 Want to send alerts to Discord instead? Check out [laravel-discord-alerts](https://github.com/spatie/laravel-discord-alerts).
 
+## Support us
 
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-slack-alerts.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-slack-alerts)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
@@ -65,9 +70,6 @@ return [
 
 To send a message to Slack, simply call `SlackAlert::message()` and pass it any message you want.
 
-![image](https://user-images.githubusercontent.com/29748407/155216562-eea89aeb-9cdb-4e81-82bb-ba2c1492f266.png)
-
-
 ```php
 SlackAlert::message("You have a new subscriber to the {$newsletter->name} newsletter!");
 ```
@@ -87,24 +89,37 @@ You can also use an alternative webhook, by specify extra ones in the config fil
 
 The webhook to be used can be chosen using the `to` function.
 
-![image](https://user-images.githubusercontent.com/29748407/155216607-64e87b9e-aea7-40c0-91ef-97d21eedc8ea.png)
-
-
 ```php
 use Spatie\SlackAlerts\Facades\SlackAlert;
 
 SlackAlert::to('marketing')->message("You have a new subscriber to the {$newsletter->name} newsletter!");
 ```
 
+### Using a custom webhooks
+
+The `to` function also supports custom webhook urls.
+
+```php
+use Spatie\SlackAlerts\Facades\SlackAlert;
+
+SlackAlert::to('https://custom-url.com')->message("You have a new subscriber to the {$newsletter->name} newsletter!");
+```
+
 ## Formatting
 
 ### Markdown
-You can format your messages with markup. Learn how [in the Slack API docs](https://slack.com/help/articles/202288908-Format-your-messages).
+You can format your messages with Slack's markup. Learn how [in the Slack API docs](https://slack.com/help/articles/202288908-Format-your-messages).
 
 ```php
 use Spatie\SlackAlerts\Facades\SlackAlert;
 
 SlackAlert::message("A message *with some bold statements* and _some italicized text_.");
+```
+
+Links are formatted differently in Slack than the classic markdown structure.
+
+```php
+SlackAlert::message("<https://spatie.be|This is a link to our homepage>");
 ```
 
 ### Emoji's
@@ -128,7 +143,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Contributing
 
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/spatie/.github/blob/main/CONTRIBUTING.md) for details.
 
 ## Security Vulnerabilities
 
@@ -143,3 +158,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+## Alternatives
+
+If you want to send rich messages with Block Kit, we suggest using [slack-php/slack-php-block-kit](https://github.com/slack-php/slack-php-block-kit)
